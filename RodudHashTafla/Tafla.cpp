@@ -1,0 +1,108 @@
+#include "Tafla.h"
+#include "Node.h"
+
+RodudHashTafla::RodudHashTafla() {
+    for (int i = 0; i < hash_toflu_lengd; i++)
+        this->start[i] = nullptr;
+}
+RodudHashTafla::~RodudHashTafla() {
+    for (int i = 0; i < hash_toflu_lengd; i++)
+    {
+        RodudHashTofluNode* current_node = this->start[i];
+        while (current_node != nullptr)
+        {
+            RodudHashTofluNode* old_node = current_node;
+            current_node = current_node->next;
+            delete old_node;
+        }
+    }
+}
+
+int RodudHashTafla::hash(std::string titill) {
+    int summa = 0;
+    for (int i = 0; i < titill.length(); i++)
+        summa += titill[i];
+
+    return summa % this->hash_toflu_lengd;
+}
+
+void RodudHashTafla::append(Efni efni) {
+    if(this->contains(efni.get_id())) return;
+
+    if(this->start == nullptr) {
+        this->start = new RodudHashTofluNode(verkefni);
+    } else {
+        RodudHashTofluNode* nyttStak = new RodudHashTofluNode(verkefni);
+        if(this->start->data.get_uniqe_mikilvaegi() < verkefni.get_uniqe_mikilvaegi()) {
+            nyttStak->next = this->start;
+            this->start = nyttStak;
+        } else {
+            // std::cout << "Going to loop!!!";
+            RodudHashTofluNode* current = this->start;
+            RodudHashTofluNode* prev = this->start;
+            while(current && current->data.get_uniqe_mikilvaegi() >= verkefni.get_uniqe_mikilvaegi()) {
+                prev = current;
+                current = current->next;
+            }
+            prev->next = nyttStak;
+            nyttStak->next = current;
+        }
+    }
+}
+void RodudHashTafla::remove(int id) {
+    if(this->start->data.get_id() == id) {
+        RodudHashTofluNode* new_start = this->start->next;
+        RodudHashTofluNode* old_start = this->start;
+        this->start = new_start;
+        delete old_start;
+    } else {
+        RodudHashTofluNode* fyrra_stak = this->find_parent(id);
+        if(!fyrra_stak) return;// Passa að það hafi verið fundið stak
+        
+        // if(fyrra_stak->next->next){
+        //     //Eyða venjulega
+        // } else {
+        //     // Það er ekkert lokastak til þess að bæta við
+        // }
+        
+        RodudHashTofluNode* new_child = fyrra_stak->next->next;
+        RodudHashTofluNode* old_child = fyrra_stak->next;
+        fyrra_stak->next = new_child;
+        delete old_child;
+    }
+}
+
+RodudHashTofluNode* RodudHashTafla::find_parent(std::string titill) {
+    if (this->start == nullptr) return nullptr;
+
+    RodudHashTofluNode* current_node = this->start;
+    RodudHashTofluNode* old_node = nullptr;
+
+    while (current_node) {
+        if (current_node->data.get_titill() == titill) return old_node;
+
+        old_node = current_node;
+        current_node = current_node->next;
+    }
+
+    return nullptr;
+}
+bool RodudHashTafla::contains(int id) {
+    RodudHashTofluNode* fundid_node = this->find_parent(id);
+    if (fundid_node) return true;
+    else return false;
+}
+
+void RodudHashTafla::print() {
+    if (this->start == nullptr) {
+        std::cout << "Þú hefur klárað öll verkin þín, eigðu góðan dag.\n" << std::flush;
+        return;
+    }
+
+    RodudHashTofluNode* current_node = this->start;
+    while (current_node != nullptr)
+    {
+        current_node->data.prenta_verkefni();
+        current_node = current_node->next;
+    }
+}
