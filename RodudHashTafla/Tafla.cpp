@@ -1,3 +1,6 @@
+#include <iostream>
+#include <string>
+
 #include "Tafla.h"
 #include "Node.h"
 
@@ -25,7 +28,7 @@ int RodudHashTafla::hash(std::string titill) {
 
     return summa % this->hash_toflu_lengd;
 }
-
+/*
 void RodudHashTafla::append(Efni efni) {
     if(this->contains(efni.get_id())) return;
 
@@ -48,7 +51,7 @@ void RodudHashTafla::append(Efni efni) {
             nyttStak->next = current;
         }
     }
-}
+}/*
 void RodudHashTafla::remove(int id) {
     if(this->start->data.get_id() == id) {
         RodudHashTofluNode* new_start = this->start->next;
@@ -71,11 +74,11 @@ void RodudHashTafla::remove(int id) {
         delete old_child;
     }
 }
-
+*/
 RodudHashTofluNode* RodudHashTafla::find_parent(std::string titill) {
-    if (this->start == nullptr) return nullptr;
-
-    RodudHashTofluNode* current_node = this->start;
+    int col_num = this->hash(titill);
+    
+    RodudHashTofluNode* current_node = this->start[col_num];
     RodudHashTofluNode* old_node = nullptr;
 
     while (current_node) {
@@ -87,22 +90,33 @@ RodudHashTofluNode* RodudHashTafla::find_parent(std::string titill) {
 
     return nullptr;
 }
-bool RodudHashTafla::contains(int id) {
-    RodudHashTofluNode* fundid_node = this->find_parent(id);
+bool RodudHashTafla::contains(std::string titill) {
+    RodudHashTofluNode* fundid_node = this->find_parent(titill);
     if (fundid_node) return true;
     else return false;
 }
 
 void RodudHashTafla::print() {
-    if (this->start == nullptr) {
-        std::cout << "Þú hefur klárað öll verkin þín, eigðu góðan dag.\n" << std::flush;
-        return;
-    }
-
-    RodudHashTofluNode* current_node = this->start;
-    while (current_node != nullptr)
+    for (int i = 0; i < this->hash_toflu_lengd; i++)
     {
-        current_node->data.prenta_verkefni();
-        current_node = current_node->next;
+        RodudHashTofluNode* current_node = this->start[i];
+        while (current_node != nullptr)
+        {
+            current_node->data.print();
+            current_node = current_node->next;
+        }
+    }
+}
+
+void RodudHashTafla::visualize() {
+    for (int i = 0; i < this->hash_toflu_lengd; i++)
+    {
+        RodudHashTofluNode* current_node = this->start[i];
+        while (current_node != nullptr)
+        {
+            std::cout << current_node->data.get_eight_letters() << " - ";
+            current_node = current_node->next;
+        }
+        std::cout << "\n";
     }
 }

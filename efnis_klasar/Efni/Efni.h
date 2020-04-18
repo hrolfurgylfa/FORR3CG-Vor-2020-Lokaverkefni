@@ -18,6 +18,7 @@ public:
     void set_titill(std::string titill);
 
     virtual void print();
+    std::string get_eight_letters();
 };
 
 #endif

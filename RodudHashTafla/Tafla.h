@@ -21,6 +21,7 @@ class RodudHashTafla {
         bool contains(std::string titill);
 
         void print();
+        void visualize();
 };
 
 #endif

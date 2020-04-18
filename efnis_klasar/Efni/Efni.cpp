@@ -21,3 +21,21 @@ void Efni::print() {
     << "ID: " << this->id << "\n"
     << "Titill: " << this->titill << "\n";
 }
+
+std::string Efni::get_eight_letters() {
+    std::string return_string = "";
+    std::cout << "Length: " << this->titill.length() << "\n";
+    for (int i = 0; i < 8; i++)
+    {
+        if (i < this->titill.length()) {
+            return_string += this->titill[i];
+            std::cout << "i: " << this->titill[i] << "\n";
+        }
+        else {
+            return_string += " ";
+            std::cout << "i: " << "space" << "\n";
+        }
+    }
+
+    return return_string;
+}
