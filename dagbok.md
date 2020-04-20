@@ -14,5 +14,4 @@
 Það sem tók lengstan tíma við utf8_string_length var bæði það að skilja vel hvernig utf8 skiptir stöfunum upp í byte en ég fann heppilega [gott myndband frá Tom Scott sem útskýrir utf8 vel](https://youtu.be/MijmeoH9LT4) og það að fatta að af eitthverri ástæðu er hægt að vera með signed char, en ég hélt að char væri alltaf unsigned.
 
 ### 20/4/2020
-Í dag byrjaði ég á að klára UTF-8 föllin, ég endurskrifaði líka svolítið fallið sem ég kláraði síðast til þess að endurtaka mig minna.
-
+Í dag byrjaði ég á að klára UTF-8 föllin, ég endurskrifaði líka svolítið fallið sem ég kláraði síðast til þess að endurtaka mig minna. Svo eftir það fór ég að klára visualize fallið sem ég get núna klárað með utf8 föllunum.

@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+
+#include "../../extra_functions/utf8_string_extention.h"
+
 #include "Efni.h"
 
 Efni::Efni() {
@@ -28,9 +31,9 @@ std::string Efni::get_eight_letters() {
     std::cout << "Length: " << this->titill.length() << "\n";
     for (int i = 0; i < 8; i++)
     {
-        if (i < this->titill.length()) {
-            return_string += this->titill[i];
-            std::cout << "i: " << this->titill[i] << "\n";
+        if (i < utf8_string_length(this->titill)) {
+            return_string += utf8_string_index(this->titill, i);
+            std::cout << "i: " << utf8_string_index(this->titill, i) << "\n";
         }
         else {
             return_string += " ";
