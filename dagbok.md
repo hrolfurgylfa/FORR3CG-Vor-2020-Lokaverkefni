@@ -12,3 +12,7 @@
 Það sem ég eyddi mestum tíma í var að vinna á bit operations fyrir utf8_string_length fallið. Það er núna tilbúið en þá er næsta skref að gera utf8_string_index, það verður mun flóknara vegna þess að ég get ekki bara hent út continuation bytum heldur þarf ég að reikna út hversu mörg þannig eru og skila þeim með svo að ég skili ekki ólesanlegum stöfum.
 
 Það sem tók lengstan tíma við utf8_string_length var bæði það að skilja vel hvernig utf8 skiptir stöfunum upp í byte en ég fann heppilega [gott myndband frá Tom Scott sem útskýrir utf8 vel](https://youtu.be/MijmeoH9LT4) og það að fatta að af eitthverri ástæðu er hægt að vera með signed char, en ég hélt að char væri alltaf unsigned.
+
+### 20/4/2020
+Í dag byrjaði ég á að klára UTF-8 föllin, ég endurskrifaði líka svolítið fallið sem ég kláraði síðast til þess að endurtaka mig minna.
+
