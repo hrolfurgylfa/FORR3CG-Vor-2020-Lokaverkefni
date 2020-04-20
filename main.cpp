@@ -31,7 +31,9 @@ int main() {
     // rodud_hash_tafla = RodudHashTafla();
     // rodud_hash_tafla.hash("Prufa");
 
-    std::cout << utf8_string_length("Bóæ") << "\n";
+    std::cout << "Lengd: " << utf8_string_length("Bóæ") << "\n";
+    std::cout << "Stafur 2: " << utf8_string_index("Bóæ", 1) << "\n";
+    std::cout << "Number of continuation bytes: " << has_continuation_bytes("𝖌"[0]);
 
     std::cout << "\nForrit búið!" << std::flush;
     return 0;

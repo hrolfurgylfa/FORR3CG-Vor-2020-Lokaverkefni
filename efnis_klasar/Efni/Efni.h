@@ -11,6 +11,7 @@ protected:
 public:
     Efni();
     Efni(int id, std::string titill);
+    virtual ~Efni();
 
     int get_id();
     void set_id(int id);
@@ -19,6 +20,7 @@ public:
 
     virtual void print();
     std::string get_eight_letters();
+
 };
 
 #endif

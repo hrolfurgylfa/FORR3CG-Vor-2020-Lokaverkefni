@@ -10,6 +10,7 @@ Efni::Efni(int id, std::string titill) {
     this->id = id;
     this->titill = titill;
 }
+Efni::~Efni() {}
 
 int Efni::get_id() { return this->id; }
 void Efni::set_id(int id) { this->id = id; }
