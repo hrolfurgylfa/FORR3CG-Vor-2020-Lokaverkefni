@@ -17,9 +17,9 @@
 int main() {
     std::cout << "Forrit byrjar!" << "\n\n" << std::flush;
 
-    Efni efni = Efni(1, "Bók");
-    efni.print();
-    std::cout << efni.get_eight_letters() << "|\n" << std::flush;
+    // Efni efni = Efni(1, "Bók");
+    // efni.print();
+    // std::cout << efni.get_eight_letters() << "|\n" << std::flush;
 
     // Bok bok = Bok(2, "Prufa", "Jón");
     // bok.print();
