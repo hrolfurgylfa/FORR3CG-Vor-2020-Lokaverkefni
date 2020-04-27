@@ -5,7 +5,7 @@
 #include "Node.h"
 
 RodudHashTafla::RodudHashTafla() {
-    for (int i = 0; i < hash_toflu_lengd; i++)
+    for (int i = 0; i < this->hash_toflu_lengd; i++)
         this->start[i] = nullptr;
 }
 RodudHashTafla::~RodudHashTafla() {
@@ -28,22 +28,24 @@ int RodudHashTafla::hash(std::string titill) {
 
     return summa % this->hash_toflu_lengd;
 }
-/*
-void RodudHashTafla::append(Efni efni) {
-    if(this->contains(efni.get_id())) return;
 
-    if(this->start == nullptr) {
-        this->start = new RodudHashTofluNode(verkefni);
+void RodudHashTafla::append(Efni efni) {
+    if(this->contains(efni.get_titill())) return;
+
+    int titils_hash = this->hash(efni.get_titill());
+
+    if(this->start[titils_hash] == nullptr) {
+        this->start[titils_hash] = new RodudHashTofluNode(efni);
     } else {
-        RodudHashTofluNode* nyttStak = new RodudHashTofluNode(verkefni);
-        if(this->start->data.get_uniqe_mikilvaegi() < verkefni.get_uniqe_mikilvaegi()) {
-            nyttStak->next = this->start;
-            this->start = nyttStak;
+        RodudHashTofluNode* nyttStak = new RodudHashTofluNode(efni);
+        if(this->start[titils_hash]->data.get_id() < efni.get_id()) {
+            nyttStak->next = this->start[titils_hash];
+            this->start[titils_hash] = nyttStak;
         } else {
             // std::cout << "Going to loop!!!";
-            RodudHashTofluNode* current = this->start;
-            RodudHashTofluNode* prev = this->start;
-            while(current && current->data.get_uniqe_mikilvaegi() >= verkefni.get_uniqe_mikilvaegi()) {
+            RodudHashTofluNode* current = this->start[titils_hash];
+            RodudHashTofluNode* prev = this->start[titils_hash];
+            while(current && current->data.get_id() >= efni.get_id()) {
                 prev = current;
                 current = current->next;
             }
@@ -111,6 +113,7 @@ void RodudHashTafla::print() {
 void RodudHashTafla::visualize() {
     for (int i = 0; i < this->hash_toflu_lengd; i++)
     {
+        std::cout << i+1 << ". ";
         RodudHashTofluNode* current_node = this->start[i];
         while (current_node != nullptr)
         {

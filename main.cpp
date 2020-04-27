@@ -30,9 +30,13 @@ int main() {
     // Myndband myndband = Myndband(4, "MORE Nondestructive Modeling in Blender", 35);
     // myndband.print();
 
-    // RodudHashTafla tafla = RodudHashTafla();
-    // std::cout << tafla.hash("Prufa");
-    // tafla.visualize();
+    RodudHashTafla tafla = RodudHashTafla();
+    tafla.append(Efni(1, "Bók"));
+    tafla.append(Efni(2, "Prufa"));
+    tafla.append(Efni(3, "Test"));
+    tafla.append(Efni(4, "Hrólfs C++ Kennsla"));
+    tafla.append(Efni(5, "Random prufa"));
+    tafla.visualize();
 
     // std::cout << "Lengd: " << utf8_string_length("Bóæ") << "\n";
     // std::cout << "Stafur 2: " << utf8_string_index("Bóæ", 1) << "\n";

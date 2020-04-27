@@ -23,6 +23,8 @@ Dagbók
 ### 27/4/2020
 Í dag færði ég dagbókina og fraKennara skjölin inn í eitt readme skjal, ég bætti svo líka við einfaldri lýsingu á verkefninu og lista af aukakröfum sem ég hef gert í readme skjalið.
 
+Svo kom ég hash töfluni í gang, hún virkar núna með efnis klasanum og visualize fallið gerir það mikið auðveldara að sjá hvort að hash taflan sé að virka eða ekki.
+
 Aukakröfur
 ------
 
