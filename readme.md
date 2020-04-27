@@ -1,4 +1,8 @@
-# Dagbók
+# FORR3CG - Lokaverkefni
+Þetta GitHub repository geymir lokaverkefni í C++ forritun gert í Tækniskólanum, verkefnið er að gera forrit með notandaviðmóti sem geymir bækur, myndbönd og tímarit. [Verkefnalýsing](https://github.com/gestskoli/FORR3CGV20_Lokaverkefni/blob/master/README.md#forr3cg-vor-2020---lokaverkefni-35)
+
+Dagbók
+------
 
 ### 15/4/2020
 Í dag vann ég á grunn gagna klösunum sem eru Efnis klasinn sem hinir klasarnir byggja frá og svo Bok, Myndband og Timarit sem eru klasarnir sem erfa frá Efni. Þessir klasar ættu núna allir að vera tilbúnir vegna þess að það er komin print function í alla klasana og extra gögnin í Bok, Myndband og Timarit miðað við Efni. Ég gleymdi reyndar að pusha svo að pushið er degi seint.
@@ -15,3 +19,20 @@
 
 ### 20/4/2020
 Í dag byrjaði ég á að klára UTF-8 föllin, ég endurskrifaði líka svolítið fallið sem ég kláraði síðast til þess að endurtaka mig minna. Svo eftir það fór ég að klára visualize fallið sem ég get núna klárað með utf8 föllunum.
+
+### 27/4/2020
+Í dag færði ég dagbókina og fraKennara skjölin inn í eitt readme skjal, ég bætti svo líka við einfaldri lýsingu á verkefninu og lista af aukakröfum sem ég hef gert í readme skjalið.
+
+Aukakröfur gerðar
+------
+
+* Búið til föll sem finna hversu margir stafir eru í streng og skila staf af ákveðnum index sem virka rétt með UTF-8 stöfum, þau klippa UTF-8 stafi ekki í sundur eins og venjulegu strengjavinnslu föllin. [Skoða í dagbók](https://example.com)
+
+Umsögn - Einkunn
+------
+
+### Hlutaskil
+
+Þetta lítur allt mjög vel út hjá þér. Allt komið sem á að vera komið og rúmlega það. Góð dagbók.
+
+Einkunn fyrir hlutaskil: 30/30
