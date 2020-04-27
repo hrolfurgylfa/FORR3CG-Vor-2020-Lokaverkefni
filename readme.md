@@ -23,10 +23,10 @@ Dagbók
 ### 27/4/2020
 Í dag færði ég dagbókina og fraKennara skjölin inn í eitt readme skjal, ég bætti svo líka við einfaldri lýsingu á verkefninu og lista af aukakröfum sem ég hef gert í readme skjalið.
 
-Aukakröfur gerðar
+Aukakröfur
 ------
 
-* Búið til föll sem finna hversu margir stafir eru í streng og skila staf af ákveðnum index sem virka rétt með UTF-8 stöfum, þau klippa UTF-8 stafi ekki í sundur eins og venjulegu strengjavinnslu föllin. [Skoða í dagbók](https://example.com)
+* Búið til föll sem finna hversu margir stafir eru í streng og skila staf af ákveðnum index sem virka rétt með UTF-8 stöfum, þau klippa UTF-8 stafi ekki í sundur eins og venjulegu strengjavinnslu föllin. [Skoða í dagbók](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#1742020)
 
 Umsögn - Einkunn
 ------
