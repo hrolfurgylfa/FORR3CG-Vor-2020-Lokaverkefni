@@ -31,5 +31,8 @@
 *.out
 *.app
 
-# Igmore the compiled binaries
+# Ignore the compiled binaries
 binaries/
+
+# Ignore the VS Code settings
+.vscode/
