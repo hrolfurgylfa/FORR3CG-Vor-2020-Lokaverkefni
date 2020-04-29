@@ -34,5 +34,6 @@
 # Ignore the compiled binaries
 binaries/
 
-# Ignore the VS Code settings
+# Ignore the VS Code settings, but not the tasks file
 .vscode/
+!.vscode/tasks.json
