@@ -31,12 +31,23 @@ int main() {
     // myndband.print();
 
     RodudHashTafla tafla = RodudHashTafla();
-    tafla.append(Efni(1, "Bók"));
-    tafla.append(Efni(2, "Prufa"));
-    tafla.append(Efni(3, "Test"));
-    tafla.append(Efni(4, "Hrólfs C++ Kennsla"));
-    tafla.append(Efni(5, "Random prufa"));
+    std::cout << "RodudHashTafla created\n";
     tafla.visualize();
+    tafla.append(new Efni(1, "Bók"));
+    tafla.visualize();
+    std::cout << "Einhverju bætt við RodudHashTafla\n";
+    tafla.append(new Efni(2, "Prufa"));
+    tafla.visualize();
+    std::cout << "?\n";
+    tafla.append(new Efni(3, "Test"));
+    tafla.visualize();
+    std::cout << "??\n";
+    tafla.append(new Myndband(4, "Hrólfs C++ Kennsla", 5));
+    std::cout << "???\n";
+    tafla.append(new Efni(5, "Random prufa"));
+    std::cout << "Öllu bætt við RodudHashTafla\n";
+    tafla.visualize();
+    std::cout << "Visualized\n";
 
     // std::cout << "Lengd: " << utf8_string_length("Bóæ") << "\n";
     // std::cout << "Stafur 2: " << utf8_string_index("Bóæ", 1) << "\n";

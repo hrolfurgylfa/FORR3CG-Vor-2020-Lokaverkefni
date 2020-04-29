@@ -11,6 +11,10 @@ struct RodudHashTofluNode {
         this->data = efni;
         this->next = nullptr;
     }
+    RodudHashTofluNode(Efni* efni) {
+        this->data = *efni;
+        this->next = nullptr;
+    }
 };
 
 #endif

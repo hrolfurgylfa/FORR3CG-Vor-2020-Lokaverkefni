@@ -6,15 +6,16 @@
 
 class RodudHashTafla {
     private:
-        RodudHashTofluNode* start[5];
+        RodudHashTofluNode** start[5];
         int hash_toflu_lengd = 5;
     public:
         RodudHashTafla();
+        RodudHashTafla(int lengd);
         ~RodudHashTafla();
 
         int hash(std::string titill);
 
-        void append(Efni efni);
+        void append(Efni* efni);
         void remove(std::string titill);
 
         RodudHashTofluNode* find_parent(std::string titill);

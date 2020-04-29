@@ -25,6 +25,9 @@ Dagbók
 
 Svo kom ég hash töfluni í gang, hún virkar núna með efnis klasanum og visualize fallið gerir það mikið auðveldara að sjá hvort að hash taflan sé að virka eða ekki.
 
+### 29/4/2020
+Í dag vann ég á því að breyta append inntakinu og RodudHashTafla arrayinum í pointera, þetta er ekki enþá komið og ég er enþá að reyna að leisa nokkur crashes en ég mun þurfa að gera það seinna.
+
 Aukakröfur
 ------
 

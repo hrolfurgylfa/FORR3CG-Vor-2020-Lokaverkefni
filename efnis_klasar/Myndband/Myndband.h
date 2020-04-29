@@ -5,7 +5,7 @@
 #ifndef MYNDBAND_H
 #define MYNDBAND_H
 
-class Myndband : Efni
+class Myndband : public Efni
 {
 private:
     int lengd;

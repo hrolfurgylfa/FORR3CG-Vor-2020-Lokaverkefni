@@ -5,7 +5,7 @@
 #ifndef TIMARIT_H
 #define TIMARIT_H
 
-class Timarit : Efni
+class Timarit : public Efni
 {
 private:
     int tolublad;

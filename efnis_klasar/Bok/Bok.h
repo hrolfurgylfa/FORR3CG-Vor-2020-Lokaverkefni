@@ -5,7 +5,7 @@
 #ifndef BOK_H
 #define BOK_H
 
-class Bok : Efni
+class Bok : public Efni
 {
 private:
     std::string hofundur;
