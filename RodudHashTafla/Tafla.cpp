@@ -25,6 +25,7 @@ RodudHashTafla::~RodudHashTafla() {
         {
             RodudHashTofluNode* old_node = current_node;
             current_node = current_node->next;
+            delete old_node->data;
             delete old_node;
         }
     }
