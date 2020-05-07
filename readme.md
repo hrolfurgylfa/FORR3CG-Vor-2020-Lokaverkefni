@@ -28,6 +28,13 @@ Svo kom ég hash töfluni í gang, hún virkar núna með efnis klasanum og visu
 ### 29/4/2020
 Í dag vann ég á því að breyta append inntakinu og RodudHashTafla arrayinum í pointera, þetta er ekki enþá komið og ég er enþá að reyna að leisa nokkur crashes en ég mun þurfa að gera það seinna.
 
+### 07/5/2020
+Í dag byrjaði ég á því að laga hash töfluna meðl hjálp kennarans, vandamálið var að ég var að búa pointerinn rangt til í headerinum.
+
+Ég fór svo að vinna á leið til þess að sækja hluti úr hash töflunni með föllunum get_efni, get_bok, get_myndband og get_timarit. Þetta tók frekar langan tíma vegna þess að ég var lengi að klóra mér í hausnum yfir því að gögnin voru að missa allt nema gögnin sem eru geymd í efnis klasanum, svo þegar ég rak alla leiðina sem gagna klasarnir fara fattaði ég að Nodeið var ekki að geyma gögnin sem pointer og við það eyddust öll extra gögnin. Þetta var samt ekki búið þá vegna þess að ég var að eyða pointerunum í RodudHashTafla.append, þetta var vegna þess að ég notaði þá ekki í Nodeinu en núna þegar ég var farinn að nota þá gleymdi ég ð eyða þessari delete skipun en þegar ég fattaði það var þetta allt komið.
+
+Svo til þess að endurtaka mig minna gerði ég líka fallið RodudHashTafla.find_node, þetta er svipað og find_parent en er hentugra þegar mér vantar bara gögnin en ekki foreldrið vegna þess að find_parent skillar nullptr þegar það sem ég er að reyna að finna er í fyrsta stakinu í linked listanum.
+
 Aukakröfur
 ------
 
