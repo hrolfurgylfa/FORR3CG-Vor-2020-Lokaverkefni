@@ -27,14 +27,20 @@ void Efni::print() {
 }
 
 std::string Efni::get_eight_letters() {
+    std::cout << "!!!4\n";
     std::string return_string = "";
     for (int i = 0; i < 8; i++)
     {
-        if (i < utf8_string_length(this->titill))
+        std::cout << this->id << "\n";
+        std::cout << "!!!6\n";
+        if (i < utf8_string_length(this->titill)){
+            std::cout << "Checking string index at: " << i << "\n";
             return_string += utf8_string_index(this->titill, i);
+        }
         else
             return_string += " ";
     }
 
+    std::cout << "!!!5\n";
     return return_string;
 }

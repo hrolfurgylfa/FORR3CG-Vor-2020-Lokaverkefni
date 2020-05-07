@@ -6,11 +6,19 @@
 
 RodudHashTafla::RodudHashTafla() {
     this->hash_toflu_lengd = 5;
-    *this->start = new RodudHashTofluNode*[this->hash_toflu_lengd];
+    *(this->start) = new RodudHashTofluNode*[this->hash_toflu_lengd];
+    std::cout << "Creating RodudHashTafla\n";
+    for (int i = 0; i < this->hash_toflu_lengd; i++){
+        std::cout << "Looping: " << i << "\n" << *(this->start)[i] << "\n";
+        this->start[i] = nullptr;
+        std::cout << "Pointer set to nullptr\n";
+    }
 }
 RodudHashTafla::RodudHashTafla(int lengd) {
     this->hash_toflu_lengd = lengd;
     *this->start = new RodudHashTofluNode*[this->hash_toflu_lengd];
+    for (int i = 0; i < this->hash_toflu_lengd; i++)
+        *(this->start)[i] = nullptr;
 }
 RodudHashTafla::~RodudHashTafla() {
     for (int i = 0; i < hash_toflu_lengd; i++)
@@ -118,13 +126,19 @@ void RodudHashTafla::print() {
 void RodudHashTafla::visualize() {
     for (int i = 0; i < this->hash_toflu_lengd; i++)
     {
+        std::cout << "!\n";
         std::cout << i+1 << ". ";
         RodudHashTofluNode* current_node = *(this->start)[i];
+        std::cout << "!!\n";
         while (current_node != nullptr)
         {
+            std::cout << "!!!1\n";
             std::cout << current_node->data.get_eight_letters() << " - ";
+            std::cout << "!!!2\n";
             current_node = current_node->next;
+            std::cout << "!!!3\n";
         }
+        std::cout << "!!!!\n";
         std::cout << "\n";
     }
 }

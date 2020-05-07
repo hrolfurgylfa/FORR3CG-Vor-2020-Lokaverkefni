@@ -28,9 +28,14 @@ int has_continuation_bytes(char stafur) {
 
 int utf8_string_length(std::string string) {
     int length = 0;
-
-    for (int i = 0; i < string.length(); i++)
+    std::cout << "Getting string length of: " << string << "\n";
+    for (int i = 0; i < string.length(); i++){
+        std::cout << "\n"
+                  << "Looping through string: " << string << "\n"
+                  << "string Length: " << string.length() << "\n"
+                  << "Loop num: " << i << "\n";
         if (!is_continuation_byte(string[i])) length++;
+    }
     
     return length;
 }
