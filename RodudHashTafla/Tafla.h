@@ -6,7 +6,7 @@
 
 class RodudHashTafla {
     private:
-        RodudHashTofluNode** start[5];
+        RodudHashTofluNode** start;
         int hash_toflu_lengd = 5;
     public:
         RodudHashTafla();
