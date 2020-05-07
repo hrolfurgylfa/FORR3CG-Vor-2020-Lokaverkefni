@@ -35,6 +35,8 @@ Svo kom ég hash töfluni í gang, hún virkar núna með efnis klasanum og visu
 
 Svo til þess að endurtaka mig minna gerði ég líka fallið RodudHashTafla.find_node, þetta er svipað og find_parent en er hentugra þegar mér vantar bara gögnin en ekki foreldrið vegna þess að find_parent skillar nullptr þegar það sem ég er að reyna að finna er í fyrsta stakinu í linked listanum.
 
+Eftir þetta vann ég svo á því að laga destructorinn fyrir hash töfluna og finally klára RodudHashTafla.remove() fallið.
+
 Aukakröfur
 ------
 

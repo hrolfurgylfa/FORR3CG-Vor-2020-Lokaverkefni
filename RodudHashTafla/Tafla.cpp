@@ -63,30 +63,29 @@ void RodudHashTafla::append(Efni* efni) {
             nyttStak->next = current;
         }
     }
-}/*
-void RodudHashTafla::remove(int id) {
-    if(this->start->data.get_id() == id) {
-        RodudHashTofluNode* new_start = this->start->next;
-        RodudHashTofluNode* old_start = this->start;
-        this->start = new_start;
+}
+void RodudHashTafla::remove(std::string titill) {
+    int col_num = this->hash(titill);
+    if (!this->start[col_num]) return;// Dálkurinn er tómur
+
+    if (this->start[col_num]->data->get_titill() == titill) {
+        RodudHashTofluNode* old_start = this->start[col_num];
+        this->start[col_num] = this->start[col_num]->next;
+
+        delete old_start->data;
         delete old_start;
     } else {
-        RodudHashTofluNode* fyrra_stak = this->find_parent(id);
-        if(!fyrra_stak) return;// Passa að það hafi verið fundið stak
+        RodudHashTofluNode* fyrra_stak = this->find_parent(titill);
+        if (!fyrra_stak) return;// Passa að það hafi verið fundið stak
         
-        // if(fyrra_stak->next->next){
-        //     //Eyða venjulega
-        // } else {
-        //     // Það er ekkert lokastak til þess að bæta við
-        // }
-        
-        RodudHashTofluNode* new_child = fyrra_stak->next->next;
-        RodudHashTofluNode* old_child = fyrra_stak->next;
-        fyrra_stak->next = new_child;
+        RodudHashTofluNode* old_child = fyrra_stak->next;// Geyma instancið sem þarf að eyða
+        fyrra_stak->next = fyrra_stak->next->next; // Taka stakið sem á að eyða úr linked listanum
+
+        delete old_child->data;
         delete old_child;
     }
 }
-*/
+
 // Þetta fall finnur nodið á undan nodinu sem þú ert að leita að,
 // þetta getur verið hentugt ef þú ert til dæmis að fikta í röð
 // linked listans, annars ef það þarf ekki að gera það er fallið

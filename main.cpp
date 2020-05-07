@@ -41,12 +41,20 @@ int main() {
     tafla.visualize();
 
     // Finna hluti
-    std::cout << "\n";
-    tafla.get_myndband("Hrólfs C++ Kennsla")->print();
-    // std::cout << tafla.get_myndband("Hrólfs C++ Kennsla")->get_lengd();
-    std::cout << "\n";
-    tafla.get_bok("C++ basics")->print();
-    // std::cout << "Bók: " << tafla.get_bok("C++ basics")->get_hofundur();
+    // std::cout << "\n";
+    // tafla.get_myndband("Hrólfs C++ Kennsla")->print();
+    // // std::cout << tafla.get_myndband("Hrólfs C++ Kennsla")->get_lengd();
+    // std::cout << "\n";
+    // tafla.get_bok("C++ basics")->print();
+    // // std::cout << "Bók: " << tafla.get_bok("C++ basics")->get_hofundur();
+
+    // Eyða hlutum
+    // std::cout << "\nEyða hlutum:\n";
+    // tafla.remove("Prufa");
+    // tafla.remove("Test");
+    // tafla.remove("Random prufa");
+    // tafla.remove("This Item Does Not Exist");
+    // tafla.visualize();
 
     // std::cout << "Lengd: " << utf8_string_length("Bóæ") << "\n";
     // std::cout << "Stafur 2: " << utf8_string_index("Bóæ", 1) << "\n";
