@@ -37,3 +37,6 @@ binaries/
 # Ignore the VS Code settings, but not the tasks file
 .vscode/settings.json
 .vscode/c_cpp_properties.json
+
+# Ignore Visual Studio settings
+.vs/
