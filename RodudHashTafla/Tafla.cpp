@@ -220,7 +220,11 @@ void RodudHashTafla::set_expand_value(int expand_value) {
     if (expand_value > 0) this->expand_value = expand_value;
 }
 
-Efni* RodudHashTafla::get_efni(std::string titill) { return this->find_node(titill)->data; }
+Efni* RodudHashTafla::get_efni(std::string titill) {
+    RodudHashTofluNode* node = this->find_node(titill);
+    if (node) return node->data;
+    else return nullptr;
+}
 Bok* RodudHashTafla::get_bok(std::string titill) { return dynamic_cast<Bok*>(this->get_efni(titill)); }
 Myndband* RodudHashTafla::get_myndband(std::string titill) { return dynamic_cast<Myndband*>(this->get_efni(titill)); }
 Timarit* RodudHashTafla::get_timarit(std::string titill) { return dynamic_cast<Timarit*>(this->get_efni(titill)); }

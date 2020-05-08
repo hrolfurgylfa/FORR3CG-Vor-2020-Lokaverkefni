@@ -116,7 +116,11 @@ int main(int argc, char* argv[]) {
             if (titill == "") continue;
             
             std::cout << "\n";
-            tafla.get_efni(titill)->print();
+            
+            Efni* efni = tafla.get_efni(titill);
+            if (efni) efni->print();
+            else std::cout << "Það sem þú varst að leita að var ekki fundið.\n";
+                
             std::cout << "\n";
             
         } else if (skipun == "modify") {

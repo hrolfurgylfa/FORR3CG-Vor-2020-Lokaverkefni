@@ -44,6 +44,8 @@ Svo splittaði ég main upp í tvö mismunandi föll kölluð test og user inter
 
 Ég vann svo á user interfacinu, ég gat notað mest af grunn flight booking interfacinu en ég þurfti samt að breyta slatta til þess að það hagaði sér rétt. Svo ákvað ég líka að gera test part af user interfacinu svo að ef maður velur test keyrir prufu kóðinn minn fyrist og setur fullt inn í hash töfluna svo að það sé auðveldara að prufa skipanir eins og get, modify og remove.
 
+Eftir þetta eyddi ég svo smá tíma í að reyna að crasha forritinu og að gera outputtið aðeins fallegra.
+
 Aukakröfur
 ------
 
