@@ -116,7 +116,7 @@ int main(int argc, char* argv[]) {
             if (titill == "") continue;
             
             std::cout << "\n";
-            
+
             Efni* efni = tafla.get_efni(titill);
             if (efni) efni->print();
             else std::cout << "Það sem þú varst að leita að var ekki fundið.\n";
@@ -148,8 +148,6 @@ int main(int argc, char* argv[]) {
             } else {
                 std::cout << "Það er bara hægt að bæta við bók/myndband/tímarit, ekki " << data_type << ".\n";
             }
-
-            std::cout << "\n" << std::flush;
 
         } else if (skipun == "remove") {
 
