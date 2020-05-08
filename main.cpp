@@ -40,6 +40,26 @@ int main() {
     tafla.append(new Efni(5, "Random prufa"));
     tafla.visualize();
 
+    std::cout << "------------------------------\n";
+    tafla.append(new Bok(6, "Ahsoka", "E. K. Johnston"));
+    tafla.append(new Efni(7, "Prufa2"));
+    tafla.append(new Efni(8, "Test3"));
+    tafla.append(new Myndband(9, "LTT Wan Show", 73));
+    tafla.append(new Efni(10, "Random prufa 1"));
+    tafla.visualize();
+
+    std::cout << "------------------------------\n";
+    tafla.append(new Timarit(11, "Top Gear", 53));
+    tafla.append(new Efni(12, "Prufa4"));
+    tafla.append(new Efni(13, "Test7"));
+    tafla.append(new Myndband(14, "Is \"Paris Syndrome\" A Real Thing?", 2));
+    tafla.append(new Efni(15, "Random prufa 5"));
+    tafla.visualize();
+
+    std::cout << "------------------------------\n";
+    tafla.set_max_depth(1);
+    tafla.visualize();
+
     // Finna hluti
     // std::cout << "\n";
     // tafla.get_myndband("Hrólfs C++ Kennsla")->print();

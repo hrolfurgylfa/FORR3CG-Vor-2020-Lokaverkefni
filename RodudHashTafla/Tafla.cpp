@@ -5,17 +5,22 @@
 #include "Node.h"
 
 RodudHashTafla::RodudHashTafla() {
-    this->hash_toflu_lengd = 5;
-    this->start = new RodudHashTofluNode*[this->hash_toflu_lengd];
-    for (int i = 0; i < this->hash_toflu_lengd; i++){
-        this->start[i] = nullptr;
-    }
+    this->initialize();
 }
 RodudHashTafla::RodudHashTafla(int lengd) {
     this->hash_toflu_lengd = lengd;
-    this->start = new RodudHashTofluNode*[this->hash_toflu_lengd];
-    for (int i = 0; i < this->hash_toflu_lengd; i++)
-        this->start[i] = nullptr;
+    this->initialize();
+}
+RodudHashTafla::RodudHashTafla(int lengd, int max_depth) {
+    this->hash_toflu_lengd = lengd;
+    this->max_depth = max_depth;
+    this->initialize();
+}
+RodudHashTafla::RodudHashTafla(int lengd, int max_depth, int expand_value) {
+    this->hash_toflu_lengd = lengd;
+    this->max_depth = max_depth;
+    this->expand_value = expand_value;
+    this->initialize();
 }
 RodudHashTafla::~RodudHashTafla() {
     for (int i = 0; i < hash_toflu_lengd; i++)
@@ -29,6 +34,11 @@ RodudHashTafla::~RodudHashTafla() {
             delete old_node;
         }
     }
+}
+void RodudHashTafla::initialize() {
+    this->start = new RodudHashTofluNode*[this->hash_toflu_lengd];
+    for (int i = 0; i < this->hash_toflu_lengd; i++)
+        this->start[i] = nullptr;
 }
 
 int RodudHashTafla::hash(std::string titill) {
@@ -44,25 +54,28 @@ void RodudHashTafla::append(Efni* efni) {
 
     int titils_hash = this->hash(efni->get_titill());
 
-    if(this->start[titils_hash] == nullptr) {
-        this->start[titils_hash] = new RodudHashTofluNode(efni);
-    } else {
-        RodudHashTofluNode* nyttStak = new RodudHashTofluNode(efni);
-        if((this->start[titils_hash])->data->get_id() < efni->get_id()) {
-            nyttStak->next = this->start[titils_hash];
-            this->start[titils_hash] = nyttStak;
-        } else {
-            // std::cout << "Going to loop!!!";
-            RodudHashTofluNode* current = this->start[titils_hash];
-            RodudHashTofluNode* prev = this->start[titils_hash];
-            while(current && current->data->get_id() >= efni->get_id()) {
-                prev = current;
-                current = current->next;
-            }
-            prev->next = nyttStak;
-            nyttStak->next = current;
-        }
+    RodudHashTofluNode* nytt_stak = new RodudHashTofluNode(efni);
+    if (this->start[titils_hash] == nullptr) {
+        this->start[titils_hash] = nytt_stak;
     }
+    else if ((this->start[titils_hash])->data->get_id() < efni->get_id()) {
+        nytt_stak->next = this->start[titils_hash];
+        this->start[titils_hash] = nytt_stak;
+    }
+    else {
+        // std::cout << "Going to loop!!!";
+        RodudHashTofluNode* current = this->start[titils_hash];
+        RodudHashTofluNode* prev = this->start[titils_hash];
+        while(current && current->data->get_id() >= efni->get_id()) {
+            prev = current;
+            current = current->next;
+        }
+        prev->next = nytt_stak;
+        nytt_stak->next = current;
+    }
+
+    // Tékka hvort að listinn hafi nokkuð orðið of langur
+    if (!this->in_expand_operation && this->check_linked_list_size(titils_hash)) this->expand(this->expand_value);
 }
 void RodudHashTafla::remove(std::string titill) {
     int col_num = this->hash(titill);
@@ -124,6 +137,82 @@ bool RodudHashTafla::contains(std::string titill) {
     else return false;
 }
 
+// Þetta fall stækkar hash töflu arrayinn, add_to_size þaarf að vera stærri en 0.
+void RodudHashTafla::expand(int add_to_size) {
+    this->in_expand_operation = true;
+
+    // Geyma stærðina
+    int old_size = this->hash_toflu_lengd;
+    this->hash_toflu_lengd += add_to_size;
+    
+    // Geyma listana
+    RodudHashTofluNode** old_start = this->start;
+    this->start = new RodudHashTofluNode*[this->hash_toflu_lengd];
+
+    // lúppa í gegnum old_start og setja allt í new_start
+    for (int i = 0; i < old_size; i++)
+    {
+        RodudHashTofluNode* current_node = old_start[i];
+        while (current_node != nullptr)
+        {
+            RodudHashTofluNode* old_node = current_node;
+            current_node = current_node->next;
+
+            this->append(old_node->data);
+            
+            delete old_node;
+        }
+    }
+
+    // Eyða gamla listanum
+    delete old_start;
+
+    // Ég er ekki lengur að vinna á listanum svo að append má núna aftur stækka hann
+    this->in_expand_operation = false;
+
+    // Tékka hvort að listinn hafi nokkuð orðið of langur
+    if (this->check_linked_list_size()) this->expand(this->expand_value);
+}
+// Þetta fall skilar true ef að einhver dálkur í hash töflunni er orðinn of
+// langur, annars skilar fallið false.
+bool RodudHashTafla::check_linked_list_size() {
+    for (int i = 0; i < this->hash_toflu_lengd; i++)
+        if (this->check_linked_list_size(i)) return true;
+    return false;
+}
+// Þetta fall skilar true ef að dálkurinn sem er settur inn er orðinn of langur,
+// annars skilar fallið false.
+bool RodudHashTafla::check_linked_list_size(int col_num) {
+    int depth_count = 0;
+    RodudHashTofluNode* current_node = this->start[col_num];
+    while (current_node != nullptr)
+    {
+        RodudHashTofluNode* old_node = current_node;
+        current_node = current_node->next;
+
+        depth_count++;
+
+        if (depth_count > this->max_depth) {
+            return true;
+            break;
+        }
+    }
+    return false;
+}
+
+int RodudHashTafla::get_max_depth() { return this->max_depth; }
+void RodudHashTafla::set_max_depth(int max_depth) {
+    if (max_depth > 0) {
+        this->max_depth = max_depth;
+        if (check_linked_list_size()) expand(this->expand_value);
+    }
+}
+int RodudHashTafla::get_expand_value() { return expand_value; }
+void RodudHashTafla::set_expand_value(int expand_value) {
+    if (expand_value > 0) this->expand_value = expand_value;
+}
+
+
 Efni* RodudHashTafla::get_efni(std::string titill) { return this->find_node(titill)->data; }
 Bok* RodudHashTafla::get_bok(std::string titill) { return dynamic_cast<Bok*>(this->get_efni(titill)); }
 Myndband* RodudHashTafla::get_myndband(std::string titill) { return dynamic_cast<Myndband*>(this->get_efni(titill)); }
@@ -140,7 +229,6 @@ void RodudHashTafla::print() {
         }
     }
 }
-
 void RodudHashTafla::visualize() {
     for (int i = 0; i < this->hash_toflu_lengd; i++)
     {

@@ -12,9 +12,17 @@ class RodudHashTafla {
     private:
         RodudHashTofluNode** start;
         int hash_toflu_lengd = 5;
+        int max_depth = 3;
+        int expand_value = 2;
+
+        bool in_expand_operation = false;
+
+        void initialize();
     public:
         RodudHashTafla();
         RodudHashTafla(int lengd);
+        RodudHashTafla(int lengd, int max_depth);
+        RodudHashTafla(int lengd, int max_depth, int expand_value);
         ~RodudHashTafla();
 
         int hash(std::string titill);
@@ -25,6 +33,15 @@ class RodudHashTafla {
         RodudHashTofluNode* find_parent(std::string titill);
         RodudHashTofluNode* find_node(std::string titill);
         bool contains(std::string titill);
+
+        void expand(int add_to_size);
+        bool check_linked_list_size();
+        bool check_linked_list_size(int col_num);
+
+        int get_max_depth();
+        void set_max_depth(int max_depth);
+        int get_expand_value();
+        void set_expand_value(int expand_value);
 
         Efni* get_efni(std::string titill);
         Bok* get_bok(std::string titill);
