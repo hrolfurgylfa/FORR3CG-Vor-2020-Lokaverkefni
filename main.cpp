@@ -56,7 +56,9 @@ int main(int argc, char* argv[]) {
     }
 
     // User interface
-    int next_id = 0;
+    int next_id;
+    if (testing) next_id = 16;
+    else next_id = 0;
     std::string input_strengur, skipun;
     do {
         // Read the command from the user
