@@ -20,5 +20,6 @@ void Bok::print(){
     std::cout << ">>>> Bók >>>>\n"
     << "ID: " << this->id << "\n"
     << "Titill: " << this->titill << "\n"
-    << "Höfundur: " << this->hofundur << "\n";
+    << "Höfundur: " << this->hofundur << "\n"
+    << ">>>>>>>>>>>>>\n";
 }

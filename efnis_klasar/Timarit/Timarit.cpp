@@ -20,5 +20,6 @@ void Timarit::print(){
     std::cout << ">>>> Tímarit >>>>\n"
     << "ID: " << this->id << "\n"
     << "Titill: " << this->titill << "\n"
-    << "Tölublað: " << this->tolublad << "\n";
+    << "Tölublað: " << this->tolublad << "\n"
+    << ">>>>>>>>>>>>>>>>>\n";
 }

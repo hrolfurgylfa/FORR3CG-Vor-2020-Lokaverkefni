@@ -20,5 +20,6 @@ void Myndband::print(){
     std::cout << ">>>> Myndband >>>>\n"
     << "ID: " << this->id << "\n"
     << "Titill: " << this->titill << "\n"
-    << "Lengd: " << this->lengd << "\n";
+    << "Lengd: " << this->lengd << "\n"
+    << ">>>>>>>>>>>>>>>>>>\n";
 }

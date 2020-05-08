@@ -23,7 +23,8 @@ void Efni::set_titill(std::string titill) { this->titill = titill; }
 void Efni::print() {
     std::cout << ">>>> Efni >>>>\n"
     << "ID: " << this->id << "\n"
-    << "Titill: " << this->titill << "\n";
+    << "Titill: " << this->titill << "\n"
+    << ">>>>>>>>>>>>>>\n";
 }
 
 std::string Efni::get_eight_letters() {
