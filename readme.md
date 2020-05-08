@@ -42,6 +42,8 @@ Eftir þetta vann ég svo á því að laga destructorinn fyrir hash töfluna og
 
 Svo splittaði ég main upp í tvö mismunandi föll kölluð test og user interface, user interface keyrir sem default en ef það er gert -t þegar forritið er keyrt keyrir test. Svp gerði ég meiri valkosti í tasks skránni svo að það sé hægt að velja hvort að test eða user interface sé keyrt.
 
+Ég vann svo á user interfacinu, ég gat notað mest af grunn flight booking interfacinu en ég þurfti samt að breyta slatta til þess að það hagaði sér rétt. Svo ákvað ég líka að gera test part af user interfacinu svo að ef maður velur test keyrir prufu kóðinn minn fyrist og setur fullt inn í hash töfluna svo að það sé auðveldara að prufa skipanir eins og get, modify og remove.
+
 Aukakröfur
 ------
 
