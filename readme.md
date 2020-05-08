@@ -37,7 +37,7 @@ Svo til þess að endurtaka mig minna gerði ég líka fallið RodudHashTafla.fi
 
 Eftir þetta vann ég svo á því að laga destructorinn fyrir hash töfluna og finally klára RodudHashTafla.remove() fallið.
 
-# 8/5/2020
+### 8/5/2020
 Í dag vann ég á expand() fallinu sem stækkar hash töfluna og nokkrum öðrum föllum sem tékka á stærð hash töflunnar. Ég bætti svo líka við getter og setter fyrir bæði max_depth og expand_value vegna þess að það er safe að breyta þessum tölum on the fly af notenda klasans.
 
 Aukakröfur
