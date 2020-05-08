@@ -79,6 +79,8 @@ void RodudHashTafla::append(Efni* efni) {
 }
 void RodudHashTafla::modify(std::string titill, Efni* efni) {
     if (this->contains(titill)) {
+        int old_id = this->get_efni(titill)->get_id();
+        efni->set_id(old_id);
         this->remove(titill);
         this->append(efni);
     }
