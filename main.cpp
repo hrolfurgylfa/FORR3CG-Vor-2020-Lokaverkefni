@@ -14,7 +14,7 @@
 #include "extra_functions/utf8_string_extention.h"
 
 
-int main() {
+int test() {
     std::cout << "Forrit byrjar!" << "\n\n" << std::flush;
 
     // Efni efni = Efni(1, "Bók");
@@ -82,4 +82,25 @@ int main() {
 
     std::cout << "\nForrit búið!" << std::flush;
     return 0;
+}
+
+int user_interface() {
+    std::cout << "Forrit byrjar!" << "\n\n" << std::flush;
+
+    
+
+    std::cout << "\nForrit búið!" << std::flush;
+    return 0;
+}
+
+int main(int argc, char* argv[]) {
+    for (int i = 1; i < argc; i++)
+    {
+        std::string arg = argv[i];
+        if (arg == "-t") return test();
+    }
+
+    // Þetta er default kóðinn sem keyrir ef þaðer ekki sett
+    // neitt command line argument.
+    return user_interface();
 }

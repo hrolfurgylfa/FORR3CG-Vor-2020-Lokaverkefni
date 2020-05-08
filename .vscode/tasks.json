@@ -12,6 +12,36 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Run last C++ build",
+            "type": "shell",
+            "command": "./binaries/cpp_compiled",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build C++ and run test",
+            "type": "shell",
+            "command": "g++ -g $(find . -type f -iregex \".*\\.cpp\") -o binaries/cpp_compiled && ./binaries/cpp_compiled -t",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run last C++ build and test",
+            "type": "shell",
+            "command": "./binaries/cpp_compiled -t",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
