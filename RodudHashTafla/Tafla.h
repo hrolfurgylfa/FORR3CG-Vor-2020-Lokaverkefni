@@ -28,6 +28,7 @@ class RodudHashTafla {
         int hash(std::string titill);
 
         void append(Efni* efni);
+        void modify(std::string titill, Efni* efni);
         void remove(std::string titill);
 
         RodudHashTofluNode* find_parent(std::string titill);

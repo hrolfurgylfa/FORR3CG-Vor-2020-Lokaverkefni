@@ -77,6 +77,12 @@ void RodudHashTafla::append(Efni* efni) {
     // Tékka hvort að listinn hafi nokkuð orðið of langur
     if (!this->in_expand_operation && this->check_linked_list_size(titils_hash)) this->expand(this->expand_value);
 }
+void RodudHashTafla::modify(std::string titill, Efni* efni) {
+    if (this->contains(titill)) {
+        this->remove(titill);
+        this->append(efni);
+    }
+}
 void RodudHashTafla::remove(std::string titill) {
     int col_num = this->hash(titill);
     if (!this->start[col_num]) return;// Dálkurinn er tómur
