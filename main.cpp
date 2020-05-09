@@ -84,7 +84,7 @@ int main(int argc, char* argv[]) {
             << "print - Prentar út allt í töflunni." << "\n"
             << "visualize - Sýnir allt í töflunni og í hvaða dálki það er." << "\n"
             << "\n"
-            << "exit - Loka forritinu" << "\n"
+            << "exit - Loka forritinu." << "\n"
             << "\n" << std::flush;
         } else if (skipun == "add") {
             
