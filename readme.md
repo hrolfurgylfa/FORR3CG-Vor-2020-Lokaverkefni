@@ -12,6 +12,12 @@ Skýrsla
 Hins vegar voru mikið af skemtilegum punktum, það er oft mjög satisfying þegar maður nær að koma flóknum kóða í gang í C++, sérstaklega þegar kóðinn virkar beint án neinna vandamála þótt að hann sé flókinn og maður búist við að hann bili. Þetta gerðist til dæmis við tafla.expand fallið mitt sem ég gerði [hér](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#852020). Ég bjóst við að það myndi ekki virka í fyrstu tilraun en það virkaði fullkomlega.
 
 ### Virkni
+Forritið virkar mep RodudHashTafla klasanum í bakgrunnunum, hann gerir allt á bakvið UI-ið, þessi klasi er svo með array og í hverju array hólfi er RodudHashTofluNode sem geymir pointer á næsta stak í linked listanum og svo annar pointer á gögnin.
+
+Gögnin eru alltaf geymd með pointer á þau í staðin fyrir að nota pass by reference svo að það sé hægt að setja inn klasa sem erfir frá Efni en ekki bara Efni klasann. Þetta gerir það að verkum að það er hægt að geyma Bækur, Myndbönd eða Tímarit í RodudHashTafla.
+
+Til þess að minnka óðarfa og endurtekinn kóða taka bæti tafla.append og tafla.modify inn pointer að Efnis klasa, eða klasa sem erfir frá Efni sem input svo að ég þarf ekki að hafa margar functions fyrir þetta, append_bok, append_myndband og append_timarit heldur get ég bara haft append.
+
 Myndband af virkni er fáanlegt [hérna](https://youtu.be/crA-d0MCz4A).
 
 ### Upplýsingar um viðmótið
