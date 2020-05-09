@@ -61,6 +61,9 @@ int main(int argc, char* argv[]) {
     else next_id = 0;
     std::string input_strengur, skipun;
     do {
+        // Reset skipun
+        skipun = "";
+        
         // Read the command from the user
         std::cout << ">>> " << std::flush;
         std::getline(std::cin, input_strengur);
