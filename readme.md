@@ -44,7 +44,7 @@ Aukakröfur
 
 * Búið til föll sem finna hversu margir stafir eru í streng og skila staf af ákveðnum index sem virka rétt með UTF-8 stöfum, þau klippa UTF-8 stafi ekki í sundur eins og venjulegu strengjavinnslu föllin. [Skoða í dagbók](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#1742020)
 * Hash taflan stækkar sjálfkrafa þegar einn af linked listunum í henni fara yfir ákveðna lengd. [Skoða í dagbók](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#852020)
-* Hver linked list í hash töflunni byrjar alltaf á hæsta ID-inu og fer yfir í lægsta ID-ið í enda linked listans. Þetta var eitthvað sem kom úr Skilaverkefni 2 þegar ég breytti því yfir í hash töflu og ég þurfti ekki að breyta því mikið til þess að það raðaði alltaf stökunum í hverjum linked lista í hash töflunni.
+* Hver linked list í hash töflunni byrjar alltaf á hæsta ID-inu og fer yfir í lægsta ID-ið í enda linked listans. Þetta var eitthvað sem kom úr Skilaverkefni 2 þegar ég breytti því yfir í hash töflu og ég gerði þetta á sama tíma og ég breytti Skilaverkefni 2 í hash töflu [hérna](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#1642020).
 
 
 Dagbók
