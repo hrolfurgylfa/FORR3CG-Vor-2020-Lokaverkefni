@@ -2,8 +2,6 @@
 #include <string>
 #include <sstream>
 
-// #include "RodudHashTafla/Tafla.h"
-
 #include "RodudHashTafla/Tafla.h"
 #include "RodudHashTafla/Node.h"
 
@@ -63,7 +61,7 @@ int main(int argc, char* argv[]) {
     do {
         // Reset skipun
         skipun = "";
-        
+
         // Read the command from the user
         std::cout << ">>> " << std::flush;
         std::getline(std::cin, input_strengur);
