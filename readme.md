@@ -5,7 +5,32 @@
 Skýrsla
 ------
 
-Einhver texti
+Þetta var overall frekar skemmtilegt verkefni, ég æfði mig svolítið meira í C++ og lærði almennilega hvernig dictionaries virka.
+
+Það voru samt leiðinda punktar, eins og vandamálin með [start gerðan rangan í headerinum](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#0752020) og [þegar ég var að debugga getterana](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#0752020) og af hverju þeir voru allir að skila Efni en ekki réttri gagnatípu. Þetta eru mestu ókostirnir við C++, að debugga það er ekki sérstaklega skemmtilegt vegna þess að maður þarf að filla allt af print skipunum til þess að finna hvar villan er.
+
+Hins vegar voru mikið af skemtilegum punktum, það er oft mjög satisfying þegar maður nær að koma flóknum kóða í gang í C++, sérstaklega þegar kóðinn virkar beint án neinna vandamála þótt að hann sé flókinn og maður búist við að hann bili. Þetta gerðist til dæmis við tafla.expand fallið mitt sem ég gerði [hér](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#852020). Ég bjóst við að það myndi ekki virka í fyrstu tilraun en það virkaði fullkomlega.
+
+### Virkni
+Myndband af virkni er fáanlegt [hérna](https://youtu.be/crA-d0MCz4A).
+
+### Upplýsingar um viðmótið
+Þetta forrit tekur nokrar einfaldar skipanir, í hjálp skipuninni þýðir venjulegur texti að það þarf að slá það inn eða  ef það er skástrik er hægt að velja um nokra valkosti en ef það eru hornsvigar utan um texta má setja orð að egin vali þar svo eftir bandstrikið kemur lýsing á skipuninni.
+```
+help - Þessi skipun sýnir þessar hjálpar upplýsingar.
+
+add [titill] bók/myndband/tímarit [höfundur/lengd/tölublað] - Setja inn bók/myndband/tímarit í safnið.
+get [titill] - Sýnir hlutinn með nafninu sem þú slærð inn.
+
+modify [titill] bók/myndband/tímarit [nýr titill] [nýr höfundur/ný lengd/nýtt tölublað] - Breyta bók/myndband/tímarit í safninu.
+remove [titill] - Eyða hlut með þessu nafni úr safninu.
+
+print - Prentar út allt í töflunni.
+visualize - Sýnir allt í töflunni og í hvaða dálki það er.
+
+exit - Loka forritinu.
+```
+Það er hægt að fá þessar upplýsingar inni í forritinu með því að ýta á enter án þess að slá neitt inn eða með því að slá inn help.
 
 
 Aukakröfur
