@@ -1,12 +1,20 @@
 # FORR3CG - Lokaverkefni
 Þetta GitHub repository geymir lokaverkefni í C++ forritun gert í Tækniskólanum, verkefnið er að gera forrit með notandaviðmóti sem geymir bækur, myndbönd og tímarit. [Verkefnalýsing](https://github.com/gestskoli/FORR3CGV20_Lokaverkefni/blob/master/README.md#forr3cg-vor-2020---lokaverkefni-35)
 
+
+Skýrsla
+------
+
+Einhver texti
+
+
 Aukakröfur
 ------
 
 * Búið til föll sem finna hversu margir stafir eru í streng og skila staf af ákveðnum index sem virka rétt með UTF-8 stöfum, þau klippa UTF-8 stafi ekki í sundur eins og venjulegu strengjavinnslu föllin. [Skoða í dagbók](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#1742020)
 * Hash taflan stækkar sjálfkrafa þegar einn af linked listunum í henni fara yfir ákveðna lengd. [Skoða í dagbók](https://github.com/hrolfurgylfa/FORR3CG-Vor-2020-Lokaverkefni#852020)
 * Hver linked list í hash töflunni byrjar alltaf á hæsta ID-inu og fer yfir í lægsta ID-ið í enda linked listans. Þetta var eitthvað sem kom úr Skilaverkefni 2 þegar ég breytti því yfir í hash töflu og ég þurfti ekki að breyta því mikið til þess að það raðaði alltaf stökunum í hverjum linked lista í hash töflunni.
+
 
 Dagbók
 ------
@@ -52,6 +60,9 @@ Svo splittaði ég main upp í tvö mismunandi föll kölluð test og user inter
 Ég vann svo á user interfacinu, ég gat notað mest af grunn flight booking interfacinu en ég þurfti samt að breyta slatta til þess að það hagaði sér rétt. Svo ákvað ég líka að gera test part af user interfacinu svo að ef maður velur test keyrir prufu kóðinn minn fyrist og setur fullt inn í hash töfluna svo að það sé auðveldara að prufa skipanir eins og get, modify og remove.
 
 Eftir þetta eyddi ég svo smá tíma í að reyna að crasha forritinu og að gera outputtið aðeins fallegra.
+
+Ég var svo að vinna á að reina að compila fyrir windows en mér tókst það ekki, ég mun mögulega gera það en ég ætla að klára myndbandið og skýrsluna áður en ég fer að reyna að compila fyrir windows.
+
 
 Umsögn - Einkunn
 ------
