@@ -73,7 +73,7 @@ int main(int argc, char* argv[]) {
 
         if (skipun == "" || skipun == "help") {
             std::cout
-            << "help - Get this help information" << "\n"
+            << "help - Þessi skipun sýnir þessar hjálpar upplýsingar." << "\n"
             << "\n"
             << "add [titill] bók/myndband/tímarit [höfundur/lengd/tölublað] - Setja inn bók/myndband/tímarit í safnið." << "\n"
             << "get [titill] - Sýnir hlutinn með nafninu sem þú slærð inn." << "\n"
@@ -84,7 +84,7 @@ int main(int argc, char* argv[]) {
             << "print - Prentar út allt í töflunni." << "\n"
             << "visualize - Sýnir allt í töflunni og í hvaða dálki það er." << "\n"
             << "\n"
-            << "exit - Exit the program" << "\n"
+            << "exit - Loka forritinu" << "\n"
             << "\n" << std::flush;
         } else if (skipun == "add") {
             
